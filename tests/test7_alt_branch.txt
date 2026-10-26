@@ -1,0 +1,17 @@
+# of rs         Cycles in EX    Cycles in Mem   # of FUs
+Integer adder   2               1                               1
+FP adder        3               3                               1
+FP multiplier   2               20                              1
+Load/store unit 3               1               4               1
+
+# Branch that alternates taken / not-taken every iteration: worst case for a 1-bit predictor
+ROB entries = 64
+Issue width = 4
+R1=0, R2=8, R5=1, R6=1
+
+Addi R1, R1, 1
+Sub R5, R0, R5
+Beq R5, R6, 1
+Addi R4, R4, 1
+Sub R7, R1, R2
+Bne R7, R0, -6

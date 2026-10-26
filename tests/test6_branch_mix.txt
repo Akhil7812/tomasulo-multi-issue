@@ -1,0 +1,24 @@
+# of rs         Cycles in EX    Cycles in Mem   # of FUs
+Integer adder   2               1                               1
+FP adder        3               3                               1
+FP multiplier   2               20                              1
+Load/store unit 3               1               4               1
+
+# Beq/Bne forward branches, taken and not taken, wrong-path stores/loads must have no effect; 1-bit predictor aliasing
+ROB entries = 64
+Issue width = 3
+R1=5, R2=5, R3=7, F1=1.0
+Mem[8]=4.0
+
+Beq R1, R2, 2
+Addi R4, R0, 111
+Sd F1, 20(R0)
+Bne R1, R3, 1
+Addi R5, R0, 222
+Beq R1, R3, 2
+Addi R6, R0, 333
+Ld F2, 8(R0)
+Add.d F3, F2, F1
+Bne R1, R2, 1
+Addi R7, R0, 444
+Sd F3, 24(R0)

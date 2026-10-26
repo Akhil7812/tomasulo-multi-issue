@@ -1,0 +1,24 @@
+# of rs         Cycles in EX    Cycles in Mem   # of FUs
+Integer adder   2               1                               1
+FP adder        3               3                               1
+FP multiplier   2               20                              1
+Load/store unit 3               1               4               1
+
+# Loads/stores: store-to-load forwarding, memory disambiguation, dependent address, store data from FP unit
+ROB entries = 128
+Issue width = 2
+R1=8, R2=16, F1=1.5, F2=2.0
+Mem[8]=10.0, Mem[12]=20.0, Mem[16]=30.0
+
+Ld F3, 0(R1)
+Add.d F4, F3, F1
+Sd F4, 0(R2)
+Ld F5, 0(R2)
+Sd F1, 4(R2)
+Ld F6, 4(R2)
+Ld F7, 4(R1)
+Mult.d F8, F7, F2
+Sd F8, 8(R2)
+Addi R3, R2, 8
+Ld F9, 0(R3)
+Sd F9, 12(R2)

@@ -1,0 +1,17 @@
+# of rs         Cycles in EX    Cycles in Mem   # of FUs
+Integer adder   2               1                               1
+FP adder        3               3                               1
+FP multiplier   2               20                              1
+Load/store unit 3               1               4               1
+
+# Sum of an array in a loop: backward Bne (taken many times, mispredicted at loop exit); tests squash + RAT recovery
+ROB entries = 64
+Issue width = 2
+R1=0, R2=40
+Mem[0]=1.0, Mem[4]=2.0, Mem[8]=3.0, Mem[12]=4.0, Mem[16]=5.0, Mem[20]=6.0, Mem[24]=7.0, Mem[28]=8.0, Mem[32]=9.0, Mem[36]=10.0
+
+Ld F2, 0(R1)
+Add.d F1, F1, F2
+Addi R1, R1, 4
+Bne R1, R2, -4
+Sd F1, 100(R0)

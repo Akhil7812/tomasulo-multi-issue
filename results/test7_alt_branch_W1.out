@@ -1,0 +1,64 @@
+                            ISSUE    EX       MEM      WB       COMMIT
+Addi R1, R1, 1              1        2                 3        4
+Sub R5, R0, R5              2        3                 4        5
+Beq R5, R6, 1               3        5                          6
+Addi R4, R4, 1              4        6                 7        8
+Sub R7, R1, R2              5        7                 8        9
+Bne R7, R0, -6              6        9                          10
+Addi R1, R1, 1              11       12                13       14
+Sub R5, R0, R5              12       13                14       15
+Beq R5, R6, 1               13       15                         16
+Sub R7, R1, R2              17       18                19       20
+Bne R7, R0, -6              18       20                         21
+Addi R1, R1, 1              19       21                22       23
+Sub R5, R0, R5              20       22                23       24
+Beq R5, R6, 1               21       24                         25
+Addi R4, R4, 1              26       27                28       29
+Sub R7, R1, R2              27       28                29       30
+Bne R7, R0, -6              28       30                         31
+Addi R1, R1, 1              29       31                32       33
+Sub R5, R0, R5              30       32                33       34
+Beq R5, R6, 1               31       34                         35
+Sub R7, R1, R2              36       37                38       39
+Bne R7, R0, -6              37       39                         40
+Addi R1, R1, 1              38       40                41       42
+Sub R5, R0, R5              39       41                42       43
+Beq R5, R6, 1               40       43                         44
+Addi R4, R4, 1              45       46                47       48
+Sub R7, R1, R2              46       47                48       49
+Bne R7, R0, -6              47       49                         50
+Addi R1, R1, 1              48       50                51       52
+Sub R5, R0, R5              49       51                52       53
+Beq R5, R6, 1               50       53                         54
+Sub R7, R1, R2              55       56                57       58
+Bne R7, R0, -6              56       58                         59
+Addi R1, R1, 1              57       59                60       61
+Sub R5, R0, R5              58       60                61       62
+Beq R5, R6, 1               59       62                         63
+Addi R4, R4, 1              64       65                66       67
+Sub R7, R1, R2              65       66                67       68
+Bne R7, R0, -6              66       68                         69
+Addi R1, R1, 1              67       69                70       71
+Sub R5, R0, R5              68       70                71       72
+Beq R5, R6, 1               69       72                         73
+Sub R7, R1, R2              74       75                76       77
+Bne R7, R0, -6              75       77                         78
+
+REGISTER VALUES
+
+      R0       R1       R2       R3       R4       R5       R6       R7       R8       R9       R10      R11      R12      R13      R14      R15      
+value:0        8        8        0        4        1        1        0        0        0        0        0        0        0        0        0        
+      R16      R17      R18      R19      R20      R21      R22      R23      R24      R25      R26      R27      R28      R29      R30      R31      
+value:0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        
+
+      F0       F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14      F15      
+value:0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      
+      F16      F17      F18      F19      F20      F21      F22      F23      F24      F25      F26      F27      F28      F29      F30      F31      
+value:0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      
+
+NON-ZERO MEMORY VALUES
+
+Addresses   Values
+
+STATISTICS: issue width=1 cdb width=1 commit width=1
+  cycles=78 committed=44 IPC=0.564  branches(issued)=19 mispredicted=9 squashed=14

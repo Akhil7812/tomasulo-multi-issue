@@ -1,0 +1,22 @@
+# of rs         Cycles in EX    Cycles in Mem   # of FUs
+Integer adder   2               1                               1
+FP adder        3               3                               1
+FP multiplier   2               20                              1
+Load/store unit 3               1               4               1
+
+# True-dependence chain (RAW): wider issue must NOT help; also WAW/WAR through register renaming
+ROB entries = 128
+Issue width = 4
+R1=1, R2=2, F1=1.5, F2=2.5
+
+Add R3, R1, R2
+Add R4, R3, R2
+Add R5, R4, R3
+Addi R6, R5, 1
+Add.d F3, F1, F2
+Add.d F4, F3, F2
+Mult.d F5, F4, F3
+Add.d F3, F5, F1
+Add.d F6, F3, F1
+Addi R1, R6, 0
+Addi R1, R1, 5
